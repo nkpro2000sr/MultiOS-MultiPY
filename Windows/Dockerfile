@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+FROM mcr.microsoft.com/windows:1909
 LABEL author="Naveen S R" github="nkpro2000sr"
 LABEL maintainer="srnaveen2k@yahoo.com"
