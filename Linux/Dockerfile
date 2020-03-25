@@ -14,6 +14,7 @@ RUN curl "https://gist.githubusercontent.com/nkpro2000sr/53049a2372a6e2ba2cc779b
     sh setup_pyenv.sh
 
 RUN rm setup_pyenv.sh && \
+    pyenv update && \
     eval "pyenv install $(echo $(cat /multipy) | sed -r "s/ / \&\& pyenv install /g")" && \
     pyenv rehash && \
     eval "pyenv global $(echo $(cat /multipy))"
