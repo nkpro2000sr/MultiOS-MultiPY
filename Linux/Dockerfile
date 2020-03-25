@@ -5,8 +5,8 @@ COPY multipy /
 
 # install dependencies
 RUN apt-get -y update && apt-get -y upgrade && \
-    apt-get install -y git curl gcc make build-essential \
-    libssl1.0-dev libreadline-dev zlib1g-dev
+    apt-get install -y git curl gcc make build-essential apt-utils \
+    libssl1.0-dev libreadline-dev zlib1g-dev libbz2-dev libsqlite3-dev
 
 # install pyenv
 RUN curl "https://gist.githubusercontent.com/nkpro2000sr/53049a2372a6e2ba2cc779b98b33c975/raw/pyenv_setup.sh" 2>/dev/null >setup_pyenv.sh && \
@@ -24,7 +24,7 @@ RUN rm setup_pyenv.sh && \
     eval "pyenv global $(echo $(cat /multipy))"
 
 # setup image
-RUN mkdir /home/user/hostcwd
+RUN mkdir -p /home/user/hostcwd
 WORKDIR /home/user/hostcwd
 ENTRYPOINT /bin/bash
 CMD ["pyenv","versions"]
