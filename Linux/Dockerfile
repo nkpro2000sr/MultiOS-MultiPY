@@ -5,9 +5,7 @@ COPY multipy /
 
 # install dependencies
 RUN apt-get -y update && apt-get -y upgrade &&\
-    apt-get install -y git curl make build-essential libssl-dev zlib1g-dev \
-                       libbz2-dev libreadline-dev libsqlite3-dev wget \
-                       llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+    apt-get install -y git curl
 
 # install pyenv
 RUN curl "https://gist.githubusercontent.com/nkpro2000sr/53049a2372a6e2ba2cc779b98b33c975/raw/pyenv_setup.sh" 2>/dev/null >setup_pyenv.sh && \
