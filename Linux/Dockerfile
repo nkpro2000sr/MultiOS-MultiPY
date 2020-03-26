@@ -24,7 +24,9 @@ RUN rm setup_pyenv.sh && \
     eval "pyenv global $(echo $(cat /multipy))"
 
 # setup image
-RUN mkdir -p /home/user/hostcwd
+RUN mkdir -p /home/user/hostcwd && \
+    LatestPython=python$(pyenv versions --bare|grep -oP "^[[:digit:]].[[:digit:]]"|sort|tail -1) && \
+    $LatestPython -m pip install --upgrade tox
 WORKDIR /home/user/hostcwd
 ENTRYPOINT /bin/bash
 CMD ["pyenv","versions"]
