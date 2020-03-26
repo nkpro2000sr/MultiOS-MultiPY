@@ -20,3 +20,4 @@ pypy2.7-7.3.0
 pypy3.5-7.0.0
 pypy3.6-7.3.0
 ```
+**tox** preinstalled.
