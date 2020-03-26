@@ -29,4 +29,4 @@ RUN mkdir -p /home/user/hostcwd && \
     $LatestPython -m pip install --upgrade tox
 WORKDIR /home/user/hostcwd
 ENTRYPOINT /bin/bash
-CMD ["pyenv","versions"]
+CMD pyenv versions && tox --version
