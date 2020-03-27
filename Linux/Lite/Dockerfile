@@ -18,10 +18,10 @@ RUN rm setup_pyenv.sh && \
     eval "$(pyenv init -)" && \
     eval "$(pyenv virtualenv-init -)" && \
     pyenv update && \
-    LatestPython=$(py install -l|grep -E "^( )*[[:digit:]].[[:digit:]]"|sort|tail -1)
+    LatestPython=$(pyeny install -l|grep -E "^( )*[[:digit:]].[[:digit:]]"|sort|tail -1) && \
     pyenv install $LatestPython && \
     pyenv rehash && \
-    eval "pyenv global $LatestPython"
+    pyenv global $LatestPython
 
 # setup image
 RUN mkdir -p /home/user/hostcwd && \
