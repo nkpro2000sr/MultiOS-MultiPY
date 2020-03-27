@@ -21,3 +21,18 @@ pypy3.5-7.0.0
 pypy3.6-7.3.0
 ```
 **tox** and **pytest** preinstalled.
+
+------------------------------------------------------------------------------------------------------
+
+## Usage  
+
+#### To run container  
+`sudo docker run nkpro/<os>-pyenv`  
+
+#### To run commands  
+`sudo docker run -v $PWD/ProjectDir:/hostcwd nkpro/<os>-pyenv tox`  
+-or-  
+`sudo docker run -v $PWD/ProjectDir:/hostcwd nkpro/<os>-pyenv bash -c 'tox && echo done'`  
+
+#### For Interactive Terminal  
+`sudo docker run --it nkpro/<os>-pyenv bash`  
