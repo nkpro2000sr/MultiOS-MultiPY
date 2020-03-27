@@ -28,5 +28,5 @@ RUN mkdir -p /home/user/hostcwd && \
     LatestPython=python$(pyenv versions --bare|grep -oP "^[[:digit:]].[[:digit:]]"|sort|tail -1) && \
     $LatestPython -m pip install --upgrade pip && \ 
     $LatestPython -m pip install --upgrade tox pytest
-WORKDIR /home/user/hostcwd
+WORKDIR /hostcwd
 CMD pyenv versions && tox --version
