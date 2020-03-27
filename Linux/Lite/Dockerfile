@@ -4,7 +4,7 @@ LABEL author="Naveen S R" github="nkpro2000sr" \
       main_version="nkpro/linux-pyenv"
 
 # install dependencies
-RUN apt-get install -y git curl gcc make build-essential apt-utils \
+RUN apt-get update && apt-get install -y git curl gcc make build-essential apt-utils \
     libssl1.0-dev libreadline-dev zlib1g-dev libbz2-dev libsqlite3-dev libffi-dev
 
 # install pyenv
