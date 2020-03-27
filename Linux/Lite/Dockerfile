@@ -18,7 +18,7 @@ RUN rm setup_pyenv.sh && \
     eval "$(pyenv init -)" && \
     eval "$(pyenv virtualenv-init -)" && \
     pyenv update && \
-    LatestPython=$(pyeny install -l|grep -E "^( )*[[:digit:]].[[:digit:]]"|sort|tail -1) && \
+    LatestPython=$(pyenv install -l|grep -E "^( )*[[:digit:]].[[:digit:]]"|sort|tail -1) && \
     pyenv install $LatestPython && \
     pyenv rehash && \
     pyenv global $LatestPython
