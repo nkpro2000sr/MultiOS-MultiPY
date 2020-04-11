@@ -17,7 +17,6 @@ ENV PYENV_ROOT /root/.pyenv
 RUN rm setup_pyenv.sh && \
     eval "$(pyenv init -)" && \
     eval "$(pyenv virtualenv-init -)" && \
-    pyenv update && \
     LatestPython=$(pyenv install -l|grep -E "^( )*[[:digit:]].[[:digit:]]"|sort|tail -1) && \
     pyenv install $LatestPython && \
     pyenv rehash && \
