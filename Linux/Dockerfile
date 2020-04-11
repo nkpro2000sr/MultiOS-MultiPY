@@ -18,7 +18,6 @@ ENV PYENV_ROOT /root/.pyenv
 RUN rm setup_pyenv.sh && \
     eval "$(pyenv init -)" && \
     eval "$(pyenv virtualenv-init -)" && \
-    pyenv update && \
     eval "pyenv install $(echo $(cat /multipy) | sed -r "s/ / \&\& pyenv install /g")" && \
     pyenv rehash && \
     eval "pyenv global $(echo $(cat /multipy))"
