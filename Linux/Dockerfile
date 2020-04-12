@@ -28,4 +28,4 @@ RUN mkdir -p /home/user/hostcwd && \
     $LatestPython -m pip install --upgrade pip && \ 
     $LatestPython -m pip install --upgrade tox pytest
 WORKDIR /hostcwd
-CMD bash -c "pyenv versions && tox --version"
+CMD pyenv versions && tox --version
