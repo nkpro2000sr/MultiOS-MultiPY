@@ -26,6 +26,7 @@ RUN rm setup_pyenv.sh && \
 RUN mkdir -p /home/user/hostcwd && \
     LatestPython=python$(pyenv versions --bare|grep -oP "^[[:digit:]].[[:digit:]]"|sort|tail -1) && \
     $LatestPython -m pip install --upgrade pip && \ 
-    $LatestPython -m pip install --upgrade tox pytest
+    $LatestPython -m pip install --upgrade tox pytest && \
+    pyenv rehash
 WORKDIR /hostcwd
-CMD bash -c 'pyenv versions && tox --version'
+CMD pyenv versions && tox --version
