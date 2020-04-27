@@ -1,4 +1,4 @@
-FROM ubuntu:eoan
+FROM ubuntu:18.04
 LABEL author="Naveen S R" github="nkpro2000sr" \
       maintainer="srnaveen2k@yahoo.com"
 COPY multipy /
