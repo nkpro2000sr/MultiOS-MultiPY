@@ -5,7 +5,7 @@ LABEL author="Naveen S R" github="nkpro2000sr" \
 
 # install dependencies
 RUN apt-get update && apt-get install -y git curl gcc make build-essential apt-utils \
-    libssl1.1-dev libreadline-dev zlib1g-dev libbz2-dev libsqlite3-dev libffi-dev
+    libssl-dev libreadline-dev zlib1g-dev libbz2-dev libsqlite3-dev libffi-dev
 
 # install pyenv
 RUN curl "https://gist.githubusercontent.com/nkpro2000sr/53049a2372a6e2ba2cc779b98b33c975/raw/pyenv_setup.sh" 2>/dev/null >setup_pyenv.sh && \
