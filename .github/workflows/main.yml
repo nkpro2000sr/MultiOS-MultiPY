@@ -1,0 +1,29 @@
+name: 'GitHub Actions To update content in README.md'
+
+on: 
+  push:
+    paths:
+      - '*/MultiPy'
+  pull_request:
+    paths:
+      - '*/MultiPy'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Update README.md with content
+      run: python ./.github/workflows/updateREADME.pl
+    - name: Commit changes
+      run: |
+        git config --global user.email "srnaveen2k@yahoo.com"
+        git config --global user.name "nkpro2000sr"
+        git status
+        git add .
+        git commit -m "Updated content in README.md"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force: false
