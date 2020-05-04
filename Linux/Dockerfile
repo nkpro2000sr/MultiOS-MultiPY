@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL author="Naveen S R" github="nkpro2000sr" \
       maintainer="srnaveen2k@yahoo.com"
-COPY multipy /
+COPY MultiPy /
 
 # install dependencies
 RUN apt-get -y update && apt-get -y upgrade && \
@@ -18,9 +18,9 @@ ENV PYENV_ROOT /root/.pyenv
 RUN rm setup_pyenv.sh && \
     eval "$(pyenv init -)" && \
     eval "$(pyenv virtualenv-init -)" && \
-    eval "pyenv install $(echo $(cat /multipy) | sed -r "s/ / \&\& pyenv install /g")" && \
+    eval "pyenv install $(echo $(cat /MultiPy) | sed -r "s/ / \&\& pyenv install /g")" && \
     pyenv rehash && \
-    eval "pyenv global $(echo $(cat /multipy))"
+    eval "pyenv global $(echo $(cat /MultiPy))"
 
 # setup image
 RUN mkdir -p /home/user/hostcwd && \
