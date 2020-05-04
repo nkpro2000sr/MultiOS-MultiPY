@@ -1,4 +1,4 @@
-name: 'GitHub Actions To update content in README.md'
+name: 'GitHub Actions To update PYTHON Versions in README.md'
 
 on: 
   push:
@@ -20,6 +20,7 @@ jobs:
         git config --global user.email "srnaveen2k@yahoo.com"
         git config --global user.name "nkpro2000sr"
         git status
+        git diff
         git add .
         git commit -m 'Updated Python versions (MultiPy) in README.md'
     - name: Push changes
