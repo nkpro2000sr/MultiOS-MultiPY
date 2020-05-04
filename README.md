@@ -17,6 +17,7 @@ with multiple python versions pre installed
 3.8.2
 pypy-5.7.1
 pypy2.7-7.3.0
+pypy3-dev
 pypy3.5-7.0.0
 pypy3.6-7.3.0
 ```
